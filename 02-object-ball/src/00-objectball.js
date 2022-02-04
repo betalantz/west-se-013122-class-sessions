@@ -133,10 +133,15 @@ function playersObject(){
 }
 
 function numPointsScored(playerName){
-  return players[playerName].points
+  // since instructions had us write playerStats, we should
+  // refactor to use it here
+  // return players[playerName].points
+  return playerStats(playerName).points
 }
 
 function shoeSize(playerName){
+  // how could we refactor this function to use
+  // the playerStats() fn?
   return players[playerName].shoe
 }
 
@@ -159,10 +164,78 @@ function playerNumbers(teamName){
   return Object.values(findByTeamName(teamName).players).map(statsObj => statsObj.number)
 }
 
+// although we'll refactor functions above to use this function,
+// it's ok to write it down here because it will get hoisted
+function playerStats(playerName){
+  return players[playerName]
+}
+
+function bigShoeRebounds(){
+  // get an array of all player stats objects
+  let sortedPlayers = Object.values(players)
+  // sort the objects in the array in place by shoe size
+  // so the stats object with the largest shoe will be the
+  // first element
+  sortedPlayers.sort((a, b) => {
+    if (a.shoe < b.shoe) return -1;
+    if (a.shoe > b.shoe) return 1;
+    return 0
+  })
+  // grab the first object by index and return the rebounds value
+  return sortedPlayers[0].rebounds
+}
+
 function bigFeetPlayers(){
   const playerArr = Object.entries(players)
   // debugger
   return playerArr.filter(player => player[1].shoe > 15).map(pArr => pArr[0])
+}
+
+// BONUS
+
+function mostPointsScored(){
+  // get an array of arrays of players
+  // will be useful because we keep player names
+  // assoc with their stats
+  let sortedPlayers = Object.entries(players)
+  // use array method sort to sort the nested arrays in place by points
+  sortedPlayers.sort((a, b) => {
+    if (a[1].points < b[1].points) return 1;
+    if (a[1].points > b[1].points) return -1;
+    return 0
+  })
+  // use 2 square brackets to first get the first inner array
+  // from the sortedPlayers array
+  // then the second brackets get the first element of the inner
+  // array, which is the name
+  return sortedPlayers[0][0]
+}
+
+function winningTeam(){
+
+}
+
+// this question is faulty in that there are two players 
+// with equally long names for the longest criteron
+function playerWithLongestName(){
+  let sortedNames = Object.keys(players).sort((a, b) => b.length - a.length)
+  return sortedNames[0]
+}
+
+// SUPER BONUS
+
+// this question is faulty in that there are two players 
+// with equally long names for the longest criteron
+function doesLongNameStealATon(){
+  let sortedPlayers = Object.entries(players)
+  sortedPlayers.sort((a, b) => {
+    if (a[1].steals < b[1].steals) return 1;
+    if (a[1].steals > b[1].steals) return -1;
+    return 0
+  })
+  const mostSteals = sortedPlayers[0][0]
+  debugger
+  return playerWithLongestName() === mostSteals
 }
 
 

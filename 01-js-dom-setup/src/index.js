@@ -13,8 +13,10 @@ btn.addEventListener('mouseover', (e) => eventHandler(e, "moused"))
 function eventHandler(event, type){
     // console.log('event: ', event);
     console.log(`the use just ${type}`);
+    let evColor;
     whatHappened.innerText = type
-    type == "clicked" ? whatHappened.style.color = "blue" : whatHappened.style.color = "green"
+    type == "clicked" ? evColor = "blue" : evColor = "green"
+    whatHappened.style.color = evColor
 }
 
 console.log(whatHappened)

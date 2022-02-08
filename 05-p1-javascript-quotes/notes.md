@@ -1,7 +1,7 @@
 ## Deliverables
 (As user, I should be able to...)
-1. [] Fetch all quotes (GET)
-2. [] See a list of quotes
+1. [x] Fetch all quotes (GET)
+2. [x] See a list of quotes
 3. [] Submit a form to add a new quote to the DOM (no persistence)
 4. [] Click a delete button to remove a quote from the DOM (no persistence)
 5. [] Click a like button to increase the number of likes for a quote (no persistence)
@@ -32,3 +32,9 @@
       </blockquote>
     </li>
   ```
+
+  MANTRA
+  1. Get data
+  2. Create elements
+  3. Add data to elements
+  4. Append to DOM

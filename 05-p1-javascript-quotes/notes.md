@@ -2,8 +2,8 @@
 (As user, I should be able to...)
 1. [x] Fetch all quotes (GET)
 2. [x] See a list of quotes
-3. [] Submit a form to add a new quote to the DOM (no persistence)
-4. [] Click a delete button to remove a quote from the DOM (no persistence)
+3. [x] Submit a form to add a new quote to the DOM (no persistence)
+4. [x] Click a delete button to remove a quote from the DOM (no persistence)
 5. [] Click a like button to increase the number of likes for a quote (no persistence)
 
 ## Bonus

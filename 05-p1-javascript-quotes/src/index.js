@@ -30,14 +30,15 @@ function renderAllQuotes(quotesArr, sort = false){
             if (quoteA.author > quoteB.author) return 1;
             if (quoteA.author = quoteB.author) return 0;
         })
-        sorted.forEach(renderOneQuote)
+        sorted.forEach(quote => renderOneQuote(quote))
     } else {
-        quotesArr.forEach(renderOneQuote)
+        quotesArr.forEach(quote => renderOneQuote(quote))
     }
 }
 
-function renderOneQuote(quoteObj){ 
-    const li = document.createElement('li')
+function renderOneQuote(quoteObj, existingLi = null){ 
+    // const li = document.createElement('li')
+    const li = existingLi ? existingLi : document.createElement('li')
     li.innerHTML = `
         <blockquote class="blockquote">
             <p class="mb-0">${quoteObj.quote}</p>
@@ -48,6 +49,7 @@ function renderOneQuote(quoteObj){
             <button class='btn-outline-info'>Edit</button>
          </blockquote>
     `
+    // debugger
     li.classList.add("quote-card")
 
     const deleteBtn = li.querySelector('.btn-danger')
@@ -58,7 +60,7 @@ function renderOneQuote(quoteObj){
     likeBtn.addEventListener('click', () => handleAddLike(li))
     editBtn.addEventListener('click', () => showEditForm(li, quoteObj))
 
-    list.appendChild(li)
+    if (!existingLi) {list.appendChild(li)}
 }
 
 // Event handler
@@ -110,15 +112,16 @@ function showEditForm(li, quoteObj){
 function handleUpdate(e, li, quoteObj){
     e.preventDefault()
     const quote = e.target.updatedQuote.value
-    console.log('quote: ', quote);
+    // console.log('quote: ', quote);
     const updatedQuote = {
         quote,
         author: quoteObj.author,
         likes: quoteObj.likes
     }
-    const para = li.querySelector('p')
-    para.innerText = quote
-    e.target.remove()
+    renderOneQuote(updatedQuote, li)
+    // const para = li.querySelector('p')
+    // para.innerText = quote
+    // e.target.remove()
 }
 
 function toggleSort(){

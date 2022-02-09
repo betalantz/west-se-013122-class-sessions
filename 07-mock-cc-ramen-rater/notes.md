@@ -4,7 +4,7 @@
      - [x] iterate all ramen
      - [x] create img elements
      - [x] add to DOM (ramen-menu)
-- [] Click an image and see details (ramen-detail)
+- [x] Click an image and see details (ramen-detail)
 - [] Submit a form to create a new ramen in menu (no persistence)
 
 ### Bonus

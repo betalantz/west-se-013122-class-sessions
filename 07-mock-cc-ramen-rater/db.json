@@ -39,6 +39,14 @@
       "image": "./assets/ramen/kojiro.jpg",
       "rating": 6,
       "comment": "Perfect for a cold night."
+    },
+    {
+      "name": "Mouthwatering Ramen",
+      "image": "https://images.pexels.com/photos/2664216/pexels-photo-2664216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "restaurant": "Ichiban",
+      "rating": "8",
+      "comment": "Teriff!",
+      "id": 6
     }
   ]
 }

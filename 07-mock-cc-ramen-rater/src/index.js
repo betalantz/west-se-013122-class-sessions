@@ -25,6 +25,18 @@ function getOneRamen(id){
     .then(r => r.json())
 }
 
+function postRamen(newRamObj){
+    const config = {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newRamObj)
+    }
+    return fetch(baseURL + '/ramens', config)
+    .then(r => r.json())
+}
+
 // Render functions
 function renderAllRamens(ramensArr){
     ramensArr.forEach(ramenObj => renderOneMenu(ramenObj))
@@ -63,8 +75,8 @@ function renderDetail(ramObj){
 // Event handlers
 function handleAddRamen(e){
     e.preventDefault()
-    console.log('e: ', e.target);
-    console.dir(e.target)
+    // console.log('e: ', e.target);
+    // console.dir(e.target)
     const name = e.target.name.value
     const restaurant = e.target.restaurant.value
     const image = e.target.image.value
@@ -77,7 +89,8 @@ function handleAddRamen(e){
         rating,
         comment
     }
-    renderOneMenu(newRamObj)
+    postRamen(newRamObj).then(serverRamObj => renderOneMenu(serverRamObj))
+    // renderOneMenu(newRamObj)
     // form.reset()
     e.target.reset()
 }

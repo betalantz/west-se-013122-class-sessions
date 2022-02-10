@@ -8,7 +8,7 @@
 - [x] Submit a form to create a new ramen in menu (no persistence)
 
 ### Bonus
-- [] see details for `ramen/1` on page load
+- [x] see details for `ramen/1` on page load
 - [] update rating and comment with an edit form (no persistence)
 - [] delete a ramen from menu (no persistence)
 

@@ -8,14 +8,17 @@ const rating = document.querySelector('#rating-display')
 const comment = document.querySelector('#comment-display')
 const form = document.querySelector('#new-ramen')
 
-
-
 // Listeners
 form.addEventListener('submit', e => handleAddRamen(e))
 
 // Fetchers
 function getAllRamens(){
     return fetch(baseURL + '/ramens')
+    .then(r => r.json())
+}
+
+function getOneRamen(id){
+    return fetch(baseURL + `/ramens/${id}`)
     .then(r => r.json())
 }
 
@@ -48,7 +51,8 @@ function renderDetail(ramObj){
 // Event handlers
 function handleAddRamen(e){
     e.preventDefault()
-    console.log('e: ', e);
+    console.log('e: ', e.target);
+    console.dir(e.target)
     const name = e.target.name.value
     const restaurant = e.target.restaurant.value
     const image = e.target.image.value
@@ -67,4 +71,10 @@ function handleAddRamen(e){
 }
 
 // Initializers
-getAllRamens().then(ramenArr => renderAllRamens(ramenArr))
+getAllRamens().then(ramenArr => {
+    renderAllRamens(ramenArr)
+    renderDetail(ramenArr[0])
+})
+
+
+// getOneRamen(1).then(ramenObj => renderDetail(ramenObj))

@@ -1,5 +1,6 @@
 // Global variables
 const baseURL = "http://localhost:3000"
+// const ramensMemo = []
 
 // DOM selectors
 const menu = document.querySelector('#ramen-menu')
@@ -7,9 +8,11 @@ const detail = document.querySelector('#ramen-detail')
 const rating = document.querySelector('#rating-display')
 const comment = document.querySelector('#comment-display')
 const form = document.querySelector('#new-ramen')
+const edit = document.querySelector('#edit-ramen')
 
 // Listeners
 form.addEventListener('submit', e => handleAddRamen(e))
+edit.addEventListener('submit', e => handleEditRating(e))
 
 // Fetchers
 function getAllRamens(){
@@ -29,13 +32,21 @@ function renderAllRamens(ramensArr){
 
 function renderOneMenu(ramenObj){
     // console.log('ramenObj: ', ramenObj);
+    const div = document.createElement('div')
     const img = document.createElement('img')
+    const btn = document.createElement('button')
 
     img.src = ramenObj.image
+    btn.textContent = 'X'
+    btn.style.backgroundColor = 'red'
+    btn.style.color = 'white'
+
+    div.append(img, btn)
 
     img.addEventListener('click', () => renderDetail(ramenObj))
+    btn.addEventListener('click', () => div.remove())
 
-    menu.appendChild(img)
+    menu.appendChild(div)
 }
 
 function renderDetail(ramObj){
@@ -47,6 +58,7 @@ function renderDetail(ramObj){
     `
     rating.textContent = ramObj.rating
     comment.textContent = ramObj.comment
+    edit.dataset.id = ramObj.id
 }
 // Event handlers
 function handleAddRamen(e){
@@ -70,10 +82,18 @@ function handleAddRamen(e){
     e.target.reset()
 }
 
+function handleEditRating(e){
+    e.preventDefault()
+    rating.textContent = e.target.rating.value
+    comment.textContent = e.target["new-comment"].value
+    e.target.reset()
+}
+
 // Initializers
 getAllRamens().then(ramenArr => {
     renderAllRamens(ramenArr)
     renderDetail(ramenArr[0])
+    // ramensMemo = ramenArr
 })
 
 

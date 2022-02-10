@@ -9,8 +9,8 @@
 
 ### Bonus
 - [x] see details for `ramen/1` on page load
-- [] update rating and comment with an edit form (no persistence)
-- [] delete a ramen from menu (no persistence)
+- [x] update rating and comment with an edit form (no persistence)
+- [x] delete a ramen from menu (no persistence)
 
 ## Data
 ```javascript

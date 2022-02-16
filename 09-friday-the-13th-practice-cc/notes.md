@@ -10,10 +10,10 @@
   - [x] get 1st movie object by 0-index of movie arr
   - [x] Set the attributes of detail elements with right object values
 3. Populate detail with movie when nav <img> clicked
-  - [] add listener to each <img> in nav
-  - [] create a detail render fn (maybe from above)
-  - [] listener passes obj to render fn
-  - [] Set the attributes of detail elements with object values
+  - [x] add listener to each <img> in nav
+  - [x] create a detail render fn (maybe from above)
+  - [x] listener passes obj to render fn
+  - [x] Set the attributes of detail elements with object values
   _N.B. "Watched" on button derived from obj bool_
 4. "Watched" button toggles and semi-persists
   - [] add event listener to button

@@ -26,6 +26,7 @@ function renderInNav(movObj){
     const navImage = document.createElement('img')
     navImage.src = movObj.image
     // console.log('navImage: ', navImage);
+    navImage.addEventListener('click', () => renderDetail(movObj))
     nav.appendChild(navImage)
 }
  

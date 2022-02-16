@@ -67,7 +67,8 @@ function addBlood(ev){
     // console.log('ev: ', ev);
     
     // console.log('bloodInput: ', bloodInput.value, typeof bloodInput.value);
-    const amount = parseInt(bloodInput.value)
+    // const amount = parseInt(bloodInput.value)
+    const amount = Number(bloodInput.value)
     selectedMovie.blood_amount += amount
     console.log('selectedMovie.blood_amount: ', selectedMovie.blood_amount);
     // drops.textContent = selectedMovie.blood_amount

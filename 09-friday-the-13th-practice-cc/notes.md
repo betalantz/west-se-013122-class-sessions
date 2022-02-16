@@ -16,14 +16,14 @@
   - [x] Set the attributes of detail elements with object values
   _N.B. "Watched" on button derived from obj bool_
 4. "Watched" button toggles and semi-persists
-  - [] add event listener to button
-  - [] cb needs conditional that will set button text based on "watched" bool
-  - [] cb flips the value of "watched" for the detail movie obj
+  - [x] add event listener to button
+  - [x] cb needs conditional that will set button text based on "watched" bool
+  - [x] cb flips the value of "watched" for the detail movie obj
 5. Enable blood-form to take a number input and increment the detail movie `blood_amount` by that number, updating DOM and semi-persisting
-  - [] add event listener to form
-  - [] get value of input from form
-  - [] increment `blood_amount` of selected movie with input value
-  - [] update the DOM (2 or more? options)
+  - [x] add event listener to form
+  - [x] get value of input from form
+  - [x] increment `blood_amount` of selected movie with input value
+  - [x] update the DOM (2 or more? options)
 
 ## Data shape
 ```javascript

@@ -74,7 +74,7 @@ button {
     font-family: 'Bebas Neue', cursive;
 }
 
-input[type=text] {
+input[type=number] {
     display:inline-block;
     border: 0;
     width:100%;

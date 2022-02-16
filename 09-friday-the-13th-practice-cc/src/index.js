@@ -1,14 +1,18 @@
 // Global vars
 const URL = "http://localhost:3000/movies"
+let selectedMovie;
 
 // DOM Selectors
 const nav = document.querySelector('#movie-list')
-
-
-// Event listeners
 const watchedBtn = document.querySelector("#watched")
 const drops = document.querySelector("#amount")
-console.log('drops: ', drops);
+const form = document.querySelector("#blood-form")
+const bloodInput = document.querySelector("#blood-amount")
+bloodInput.type = "number"
+
+// Event listeners
+watchedBtn.addEventListener('click', toggleWatched)
+form.addEventListener('submit', addBlood)
 
 // Fetchers
 function getAllMovies(){
@@ -32,7 +36,7 @@ function renderInNav(movObj){
  
 function renderDetail(movObj){
     console.log('movObj: ', movObj);
-
+    selectedMovie = movObj
     const detailImg = document.querySelector("#detail-image")
     const title = document.querySelector("#title")
     const year = document.querySelector("#year-released")
@@ -49,6 +53,27 @@ function renderDetail(movObj){
 
 
 // Event Handlers
+
+function toggleWatched(){
+    selectedMovie.watched = !selectedMovie.watched
+    // console.log('selectedMovie: ', selectedMovie.watched);
+    let watchVal;
+    selectedMovie.watched ? watchVal = "Watched" : watchVal = "Unwatched"
+    watchedBtn.textContent = watchVal
+}
+
+function addBlood(ev){
+    ev.preventDefault()
+    // console.log('ev: ', ev);
+    
+    // console.log('bloodInput: ', bloodInput.value, typeof bloodInput.value);
+    const amount = parseInt(bloodInput.value)
+    selectedMovie.blood_amount += amount
+    console.log('selectedMovie.blood_amount: ', selectedMovie.blood_amount);
+    // drops.textContent = selectedMovie.blood_amount
+    renderDetail(selectedMovie)
+    form.reset()
+}
 
 // Initializers
 getAllMovies().then(movArr => {

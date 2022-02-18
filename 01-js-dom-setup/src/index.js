@@ -1,13 +1,46 @@
 // Ex 1
-const url = "https://data.cityofnewyork.us/api/views/p94q-8hxh" // CityBike Data from data.gov
-const data = fetch(url)
 
-console.log(data) // Promise {<pending>}
+let whatHappened = document.querySelector("#happening");
+
+const btn = document.getElementById("notify")
+btn.addEventListener('click', (e) => eventHandler(e, "clicked"))
 
 // Ex 2
 
+// const btn = document.getElementById("notify")
+btn.addEventListener('mouseover', (e) => eventHandler(e, "moused"))
+
+function eventHandler(event, type){
+    // console.log('event: ', event);
+    console.log(`the use just ${type}`);
+    let evColor;
+    whatHappened.innerText = type
+    type == "clicked" ? evColor = "blue" : evColor = "green"
+    whatHappened.style.color = evColor
+}
+
+console.log(whatHappened)
+
 
 // Ex 3
-
+// script tag to high on html w/o defer
 
 // Ex 4
+
+// index.js
+// document.addEventListener("DOMContentLoaded", function(){
+//     const btn = document.getElementById("notify")
+//     btn.addEventListener('mouseover', function(){
+//       console.log("Printing a Message!")
+//     })
+//   });
+
+// Ex 5
+
+// index.js
+// document.addEventListener("DOMContentLoaded", function(){
+//     const btn = document.getElementById("notifiable")
+//     btn.addEventListener('click', function(){
+//       console.log("Printing a Message!")
+//     })
+//   });

@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from './Logo'
 import MenuLinks from "./MenuLinks";
-import MenuLi from './MenuLinks'
 import Search from './Search'
 
 function SideMenu() {

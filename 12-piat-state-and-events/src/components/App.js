@@ -16,6 +16,11 @@ function App() {
     setTasks(tasks.filter(task => task.text !== deletedTaskText))
   }
 
+  function handleAddTask(newTaskObj){
+    console.log('newTaskObj: ', newTaskObj);
+    setTasks([...tasks, newTaskObj]);
+  }
+
   const visibleTasks = tasks.filter(task => task.category === category || category === "All")
 
   return (
@@ -25,8 +30,11 @@ function App() {
         categories={CATEGORIES}
         selectedCategory={category}
         onSelectCategory={setCategory}
+        />
+      <NewTaskForm 
+        categories={CATEGORIES.filter(cat => cat !== "All")}
+        onTaskFormSubmit={handleAddTask}
       />
-      <NewTaskForm />
       <TaskList tasks={visibleTasks} onDeleteTask={handleDeleteTask}/>
     </div>
   );

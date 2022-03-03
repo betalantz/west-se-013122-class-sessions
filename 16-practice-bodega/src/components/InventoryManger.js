@@ -26,8 +26,14 @@ function InventoryManager() {
     }
 
     function removeFromReorders(item){
-        const newReorders = reorders.filter(reorderItem => reorderItem !== item)
-        setReorders(newReorders)
+        // const newReorders = reorders.filter(reorderItem => reorderItem !== item)
+        // setReorders(newReorders)
+        removeItemFromArray(reorders, item, setReorders)
+    }
+
+    function removeItemFromArray(array, item, setterFn){
+        const newArr = array.filter(arrItem => arrItem !== item)
+        setterFn(newArr)
     }
     
     function handleDelete(e, item){
@@ -35,10 +41,12 @@ function InventoryManager() {
         console.log('item: ', item);
         fetch(baseURL + `/inventory/${item.id}`, { method: 'DELETE' })
         
-        const newReorders = reorders.filter(reorderItem => reorderItem !== item)
-        setReorders(newReorders)
-        const newInventory = inventory.filter(inventoryItem => inventoryItem !== item)
-        setInventory(newInventory);
+        // const newReorders = reorders.filter(reorderItem => reorderItem !== item)
+        // setReorders(newReorders)
+        // const newInventory = inventory.filter(inventoryItem => inventoryItem !== item)
+        // setInventory(newInventory);
+        removeItemFromArray(reorders, item, setReorders)
+        removeItemFromArray(inventory, item, setInventory)
     }   
 
     return(

@@ -1,7 +1,7 @@
 ## User stories
 As a user, I can:
 1. [x] see all the listings (image, description, location, GET)
-2. [] click star icon to "fav/unfav" the item (no persistence, state on each card)
+2. [x] click star icon to "fav/unfav" the item (no persistence, state on each card)
 3. [] click a trash icon to DELETE from both db and DOM
 4. [] submit a search term that will filter listings by name
 

@@ -26,17 +26,33 @@ function InventoryManager() {
     }
 
     function removeFromReorders(item){
-        console.log('item: ', item);
         const newReorders = reorders.filter(reorderItem => reorderItem !== item)
         setReorders(newReorders)
     }
-
     
+    function handleDelete(e, item){
+        e.stopPropagation()
+        console.log('item: ', item);
+        fetch(baseURL + `/inventory/${item.id}`, { method: 'DELETE' })
+        
+        const newReorders = reorders.filter(reorderItem => reorderItem !== item)
+        setReorders(newReorders)
+        const newInventory = inventory.filter(inventoryItem => inventoryItem !== item)
+        setInventory(newInventory);
+    }   
 
     return(
         <div className="container">
-            <CurrentInventoryList inventory={inventory} onAddClick={addToReorders}/>
-            <ReorderInventoryList reorders={reorders} onRemoveClick={removeFromReorders}/>
+            <CurrentInventoryList 
+              inventory={inventory} 
+              onAddClick={addToReorders} 
+              onDelete={handleDelete}
+            />
+            <ReorderInventoryList 
+              reorders={reorders} 
+              onRemoveClick={removeFromReorders} 
+              onDelete={handleDelete}
+            />
         </div>
     );
 }

@@ -7,12 +7,6 @@
       "price": 4.99
     },
     {
-      "id": 2,
-      "image": "./images/ben-jerry.png",
-      "name": "Ben & Jerry's",
-      "price": 7.99
-    },
-    {
       "id": 3,
       "image": "./images/milk.png",
       "name": "Milk",
@@ -53,24 +47,6 @@
       "image": "./images/coke.jpeg",
       "name": "Coca-Cola",
       "price": 1.99
-    },
-    {
-      "id": 12,
-      "image": "./images/seltzer.jpeg",
-      "name": "Seltzer Water",
-      "price": 1.99
-    },
-    {
-      "id": 13,
-      "image": "./images/beer.jpeg",
-      "name": "Beer",
-      "price": 15.99
-    },
-    {
-      "id": 14,
-      "image": "./images/dog-food.jpg",
-      "name": "Dog Food",
-      "price": 59.99
     }
   ]
 }

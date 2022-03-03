@@ -1,11 +1,19 @@
 import React from 'react'
+import InventoryItemCard from './InventoryItemCard'
 
-function ReorderInventoryList() {
+function ReorderInventoryList({reorders, onRemoveClick}) {
+    const reorderCards = reorders.map(itemObj => (
+        <InventoryItemCard 
+          key={itemObj.id} 
+          item={itemObj} 
+          onCardClick={onRemoveClick}
+        />
+    ))
     return(
         <div id="reorder-container">
             <h2>Reorder</h2>
             <div>
-                {/** Put inventory items here */}
+                {reorderCards}
             </div>
         </div>
     );

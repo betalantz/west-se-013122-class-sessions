@@ -12,14 +12,17 @@ function App() {
       .then(setListings)
   }, [])
 
-  function handleRemoveListing(listing){
+  function handleRemoveListing(listingId){
+    console.log('listing: ', listingId)
     // we could also do the DELETE fetch here, but we'll do it on the ListingCard
+    const newListings = listings.filter(listing => listing.id !== listingId)
+    setListings(newListings)
   }
   
   return (
     <div className="app">
       <Header />
-      <ListingsContainer listings={listings}/>
+      <ListingsContainer listings={listings} onRemoveListing={handleRemoveListing}/>
     </div>
   );
 }

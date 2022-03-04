@@ -6,6 +6,7 @@ function App() {
 
   const [listings, setListings] = useState([])
   const [searchTerm, setSearchTerm] = useState("")
+  const [sortBy, setSortBy] = useState("id")
 
   useEffect(() => {
     fetch("http://localhost:6001/listings")
@@ -20,11 +21,19 @@ function App() {
     setListings(newListings)
   }
 
-  const filteredListings = listings.filter(listing => listing.description.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredListings = listings
+      .filter(listing => listing.description.toLowerCase().includes(searchTerm.toLowerCase()))
+      .sort((listingA, listingB) => {
+        if (sortBy === "id") {
+          return listingA.id = listingB.id
+        } else {
+          return listingA.location.localeCompare(listingB.location)
+        }
+      })
   
   return (
     <div className="app">
-      <Header onSearch={setSearchTerm} />
+      <Header onSearch={setSearchTerm} onSort={setSortBy} />
       <ListingsContainer listings={filteredListings} onRemoveListing={handleRemoveListing}/>
     </div>
   );

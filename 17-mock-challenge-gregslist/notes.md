@@ -6,7 +6,7 @@ As a user, I can:
 4. [x] submit a search term that will filter listings by name
 
 ### ADVANCED
-1. [] sort alphabetically by location
+1. [x] sort alphabetically by location
 2. [] create a new listing with a form and persistence (POST)
 
 

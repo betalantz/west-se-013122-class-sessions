@@ -41,6 +41,18 @@
       "description": "Treadmill Parts For Free",
       "image": "./images/treadmill.jpg",
       "location": "East Flatbush"
+    },
+    {
+      "description": "Even lovelier couch",
+      "image": "./images/couch.jpg",
+      "location": "Staten Is",
+      "id": 8
+    },
+    {
+      "description": "bigger pile o wood",
+      "image": "./image/wood.jpg",
+      "location": "My Yard",
+      "id": 9
     }
   ]
 }

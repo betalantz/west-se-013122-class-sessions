@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import ListingsContainer from "./ListingsContainer";
+import NewListingForm from './NewListingForm'
 
 function App() {
 
@@ -21,6 +22,11 @@ function App() {
     setListings(newListings)
   }
 
+  function handleAddListing(newListing) {
+    const updatedListingsArray =  [...listings, newListing];
+    setListings(updatedListingsArray);
+  }
+
   const filteredListings = listings
       .filter(listing => listing.description.toLowerCase().includes(searchTerm.toLowerCase()))
       .sort((listingA, listingB) => {
@@ -34,6 +40,7 @@ function App() {
   return (
     <div className="app">
       <Header onSearch={setSearchTerm} onSort={setSortBy} />
+      <NewListingForm onAddListing={handleAddListing} />
       <ListingsContainer listings={filteredListings} onRemoveListing={handleRemoveListing}/>
     </div>
   );

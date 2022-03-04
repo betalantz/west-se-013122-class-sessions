@@ -3,7 +3,7 @@ As a user, I can:
 1. [x] see all the listings (image, description, location, GET)
 2. [x] click star icon to "fav/unfav" the item (no persistence, state on each card)
 3. [x] click a trash icon to DELETE from both db and DOM
-4. [] submit a search term that will filter listings by name
+4. [x] submit a search term that will filter listings by name
 
 ### ADVANCED
 1. [] sort alphabetically by location

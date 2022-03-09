@@ -1,0 +1,120 @@
+@font-face {
+    font-family: marker;
+    src: url('./assets/fonts/PermanentMarker-Regular.ttf');
+}
+@font-face {
+    font-family: gochi;
+    src: url('./assets/fonts/GochiHand-Regular.ttf');
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: marker;
+    background-color: black;
+    color: hsl(320, 95%, 65%);
+    text-align: center;
+}
+
+.header img {
+    width: 75px;
+    position: absolute;
+    left: 5px;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 1px 1px 1px #0dfdfd;
+}
+
+/*
+ * TABLE
+ */
+
+table {
+    width: 80%;
+    margin: 0 auto 0 auto;
+    text-align:left;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 1.5em;
+    border-bottom: 1px solid white;
+    background-color: black;
+}
+
+td {
+    font-size: 1.5em;
+    padding: 0 .5em;
+
+}
+
+td img {
+    width: 50px;
+}
+
+.table-row {
+    color: #0dfdfd;
+    font-family: gochi;
+}
+
+.row-image {
+    width: 10%;
+
+}
+
+.row-title {
+    overflow: hidden;
+    text-overflow:ellipsis;
+    text-align:left;
+    white-space: nowrap;
+}
+
+/*
+ * SEARCH
+ */
+ 
+ input[type=text],
+ input[type=number] {
+     font-family: gochi;
+     font-size: 1.5em;
+     background: none;
+     padding: .5em;
+     color: white;
+     border: 1px solid white;
+     border-radius: 8px;
+ }
+ 
+ .search i {
+     padding: 10px;
+     margin-left: 5px;
+     color: transparent;
+     text-shadow: 0 0 hsl(320, 95%, 65%);
+ }
+
+ /*
+ * FORM
+ */
+
+input[type=submit] {
+    font-family: gochi;
+    font-size: 1.5em;
+    background: #0dfdfd;
+    padding: .5em;
+    color: black;
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    gap: .25em;
+}
+
+.content {
+    display: flex;
+    gap: 2em;
+    margin-top: 2em;
+}

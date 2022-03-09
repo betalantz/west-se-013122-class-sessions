@@ -8,6 +8,7 @@ function TracksPage() {
   const baseUrl = "http://localhost:8001"
 
   const [tracks, setTracks] = useState([])
+  const [searchTerm, setSearchTerm] = useState("")
 
   useEffect(() => {
     fetch(baseUrl + "/tracks")
@@ -35,11 +36,18 @@ function TracksPage() {
       })
   }
 
+  const filteredTracks = tracks.filter(track => {
+    return track.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+         track.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+         track.BPM.toString().includes(searchTerm)
+  })
+
+
   return (
     <div>
-      <Search />
+      <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
       <AddTrackForm onSubmitTrack={addTrack} />
-      <TracksList tracks={tracks} />
+      <TracksList tracks={filteredTracks} />
     </div>
   )
 }

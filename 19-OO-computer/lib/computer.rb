@@ -47,7 +47,7 @@ class Computer
 
     attr_writer :storage_free # this is not necessary for the solution, but I wanted to show
                               # this as a use case for attr_writer
-    end
+    
 
 end
 

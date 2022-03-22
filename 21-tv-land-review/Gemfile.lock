@@ -21,6 +21,8 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     diff-lcs (1.4.4)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     method_source (1.0.0)
@@ -64,11 +66,13 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+  arm64-darwin-21
   universal-darwin-20
 
 DEPENDENCIES
   activerecord (~> 6.1)
   database_cleaner
+  faker (~> 2.19)
   pry
   rake
   require_all

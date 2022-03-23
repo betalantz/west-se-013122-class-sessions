@@ -101,7 +101,7 @@ Use Active Record association macros and Active Record query methods where appro
 ### Aggregate and Association Methods
 
 #### Subscription
-- [] `Subscription#print_details`
+- [x] `Subscription#print_details`
   - `puts` a string to the terminal to display the details of the subscription
   - the string should be formatted like this: `{reader name} subscribed to {magazine title} for ${subscription price}`
 

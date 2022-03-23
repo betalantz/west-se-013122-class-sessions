@@ -117,10 +117,10 @@ Use Active Record association macros and Active Record query methods where appro
 
 #### Magazine
 
-- [] `Magazine#email_list`
+- [x] `Magazine#email_list`
   - returns a `String` of a semi-colon separated list of emails for all the readers subscribed to this magazine
   - the string should be formatted like this: `email1@example.com;email2@example.com;email3@example.com`
-- [] `Magazine.most_popular`
+- [x] `Magazine.most_popular`
   - returns the `Magazine` instance with the most subscribers
 
 

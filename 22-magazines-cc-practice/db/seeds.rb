@@ -1,6 +1,7 @@
 puts "Clearing old data..."
 Magazine.destroy_all
 Reader.destroy_all
+Subscription.destroy_all
 
 puts "Seeding magazines..."
 magazines = ["The New Yorker", "National Geographic", "Wired", "People", "Cosmopolitan", "Time", "US Weekly", "New York Magazine"]

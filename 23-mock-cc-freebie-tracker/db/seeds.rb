@@ -18,4 +18,12 @@ puts "Creating freebies..."
 # ***************************************************************
 # Create freebies Here
 
+ITEMS = ["waterbottle", "thumb drive", "sticker", "bag", "fidget spinner", "rubber duck", "lanyards", "puffy"]
+ITEMS.each {|item|
+    comp = Company.all.sample
+    dev = Dev.all.sample
+    value = rand(2..150)
+    Freebie.create(company: comp, dev: dev, item_name: item, value: value)
+}
+
 puts "Seeding done!"

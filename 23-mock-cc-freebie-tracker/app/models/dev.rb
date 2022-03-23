@@ -5,9 +5,10 @@ class Dev < ActiveRecord::Base
 
     def received_one?(item_name)
         # item = self.freebies.find_by(item_name: item_name)
+        !!self.freebies.find_by(item_name: item_name)
         # item ? true : false
         # self.freebies.pluck(:item_name).include?(item_name)
-        self.freebies.any? {|f| f.item_name == item_name}
+        # self.freebies.any? {|f| f.item_name == item_name}
     end
 
     def give_away(dev, freebie)

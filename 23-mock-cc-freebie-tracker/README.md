@@ -147,7 +147,7 @@ companies for the first dev in the database based on your seed data; and
 
 #### Freebie
 
-- [] `Freebie#print_details`
+- [x] `Freebie#print_details`
   - should return a string formatted as follows:
     `{insert dev's name} owns a {insert freebie's item_name} from {insert company's name}`
 

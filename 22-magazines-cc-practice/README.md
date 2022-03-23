@@ -79,48 +79,48 @@ Use Active Record association macros and Active Record query methods where appro
 
 #### Subscription
 
-- `Subscription#reader`
+- [x] `Subscription#reader`
   - should return the `Reader` instance for this subscription
-- `Subscription#magazine`
+- [x] `Subscription#magazine`
   - should return the `Magazine` instance for this subscription
 
 #### Magazine
 
-- `Magazine#subscriptions`
+- [x] `Magazine#subscriptions`
   - returns a collection of all `Subscription` instances for this magazine
-- `Magazine#readers`
+- [x] `Magazine#readers`
   - returns a collection of all `Reader` instances who are subscribed to this magazine
 
 #### Reader
 
-- `Reader#subscriptions`
+- [x] `Reader#subscriptions`
   - should return a collection of all `Subscription` instances for this reader
-- `Reader#magazines`
+- [x] `Reader#magazines`
   - should return a collection of all `Magazine` instances that this reader is subscribed to
 
 ### Aggregate and Association Methods
 
 #### Subscription
-- `Subscription#print_details`
+- [] `Subscription#print_details`
   - `puts` a string to the terminal to display the details of the subscription
   - the string should be formatted like this: `{reader name} subscribed to {magazine title} for ${subscription price}`
 
 #### Reader
 
-- `Reader#subscribe(magazine, price)`
+- [] `Reader#subscribe(magazine, price)`
   - takes a `magazine` (an instance of the `Magazine` class) and a `price` (integer) as arguments, and creates a new `subscription` in the database associated with the magazine and the reader
-- `Reader#total_subcription_price`
+- [] `Reader#total_subcription_price`
   - returns the total price for all the reader's subscriptions
-- `Reader#cancel_subscription(magazine)`
+- [] `Reader#cancel_subscription(magazine)`
   - takes a `magazine` instance and removes the subscription for this reader
   - you will have to delete a row from the `subscriptions` table to get this to work!
 
 #### Magazine
 
-- `Magazine#email_list`
+- [] `Magazine#email_list`
   - returns a `String` of a semi-colon separated list of emails for all the readers subscribed to this magazine
   - the string should be formatted like this: `email1@example.com;email2@example.com;email3@example.com`
-- `Magazine.most_popular`
+- [] `Magazine.most_popular`
   - returns the `Magazine` instance with the most subscribers
 
 

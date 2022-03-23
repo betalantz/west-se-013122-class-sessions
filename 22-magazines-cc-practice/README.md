@@ -107,11 +107,11 @@ Use Active Record association macros and Active Record query methods where appro
 
 #### Reader
 
-- [] `Reader#subscribe(magazine, price)`
+- [x] `Reader#subscribe(magazine, price)`
   - takes a `magazine` (an instance of the `Magazine` class) and a `price` (integer) as arguments, and creates a new `subscription` in the database associated with the magazine and the reader
-- [] `Reader#total_subcription_price`
+- [x] `Reader#total_subcription_price`
   - returns the total price for all the reader's subscriptions
-- [] `Reader#cancel_subscription(magazine)`
+- [x] `Reader#cancel_subscription(magazine)`
   - takes a `magazine` instance and removes the subscription for this reader
   - you will have to delete a row from the `subscriptions` table to get this to work!
 

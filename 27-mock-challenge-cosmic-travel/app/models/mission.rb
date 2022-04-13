@@ -3,5 +3,5 @@ class Mission < ApplicationRecord
   belongs_to :planet
 
   validates :name, presence: true
-  validates :scientist, uniqueness: true # is this the right validation?
+  validates :scientist, uniqueness: {scope: :planet}
 end

@@ -1,9 +1,14 @@
 import React from "react";
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { adoptPet } from '../features/pets/petsSlice'
 
 function Pet({ pet }) {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+
+  const handleAdoptPet = () => {
+    dispatch(adoptPet(pet.id))
+  }
   
   return (
     <div className="card" data-testid="pet">
@@ -24,7 +29,7 @@ function Pet({ pet }) {
         {pet.isAdopted ? (
           <button className="ui disabled button">Already adopted</button>
         ) : (
-          <button className="ui primary button" onClick={() => console.log("adopted")}>
+          <button className="ui primary button" onClick={handleAdoptPet}>
             Adopt pet
           </button>
         )}

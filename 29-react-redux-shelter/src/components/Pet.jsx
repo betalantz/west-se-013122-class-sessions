@@ -1,13 +1,16 @@
 import React from "react";
-import { useDispatch } from 'react-redux';
-import { adoptPet } from '../features/pets/petsSlice'
+// import { useDispatch } from 'react-redux';
+// import { adoptPet } from '../features/pets/petsSlice'
+import { useUpdatePetMutation } from '../app/services/petsApi'
 
 function Pet({ pet }) {
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
+  const [updatePet, { isLoading }] = useUpdatePetMutation()
 
   const handleAdoptPet = () => {
-    dispatch(adoptPet(pet.id))
+    // dispatch(adoptPet(pet.id))
+    updatePet({id: pet.id, isAdopted: true })
   }
   
   return (

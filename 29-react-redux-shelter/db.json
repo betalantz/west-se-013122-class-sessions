@@ -106,7 +106,7 @@
       "age": 5,
       "weight": 1,
       "name": "Strike",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "1b44f0ee-1957-471b-b474-92650053995c",
@@ -115,7 +115,7 @@
       "age": 8,
       "weight": 4,
       "name": "Sprout",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "1a56b25a-008f-4c00-bdb7-9302ca608964",
@@ -124,7 +124,7 @@
       "age": 6,
       "weight": 5,
       "name": "Sprout",
-      "isAdopted": false
+      "isAdopted": true
     },
     {
       "id": "5f0ca9bc-5454-4ff5-a7d7-2c8d0a0f1583",
